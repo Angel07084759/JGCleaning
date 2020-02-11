@@ -8,7 +8,7 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="rgba(0, 0, 0, 0.8)">
     <head>
         <script>
-            function read(callback)
+            function read(url, callback)
             {
                 var client = new XMLHttpRequest();
                 client.open('GET', url);
@@ -60,7 +60,15 @@
             </spam>
            
         </div>
-        <div><script> read('date.txt')</script></div>
+        <div>
+            <p id="ID"></p>
+            <script> 
+                read('date.txt', function(result)
+                {
+                    document.getElementById("ID").innerHTML = result;
+                });
+            </script>
+        </div>
         
     </body>
 </html>

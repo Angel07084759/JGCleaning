@@ -7,9 +7,21 @@
         <meta name="msapplication-navbutton-color" content="rgba(0, 0, 0, 0.8)">
         <meta name="apple-mobile-web-app-status-bar-style" content="rgba(0, 0, 0, 0.8)">
     <head>
+        <script>
+            function read(callback)
+            {
+                var client = new XMLHttpRequest();
+                client.open('GET', url);
+                client.onreadystatechange = function() 
+                {
+                  callback(client.responseText);
+                }
+                client.send();
+            }
+        </script>
+        <style> @font-face { src: url(https://angel07084759.github.io/jgcleaning/fonts/forte.TTF); font-family: forte; } </style>
 <!--        <style> @font-face { src: url(https://angel07084759.github.io/jgcleaning/fonts/forte.TTF); font-family: forte; } </style>-->
-<!--        <style> @font-face { src: url(https://angel07084759.github.io/jgcleaning/fonts/forte.TTF); font-family: forte; } </style>-->
-        <style> @font-face { src: url(fonts/forte.ttf); font-family: forte; } </style>
+<!--        <style> @font-face { src: url(fonts/forte.ttf); font-family: forte; } </style>-->
         <style> 
             *
             {
@@ -48,5 +60,7 @@
             </spam>
            
         </div>
+        <div><script> read('date.txt')</script></div>
+        
     </body>
 </html>
